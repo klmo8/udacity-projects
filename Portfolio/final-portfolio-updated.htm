@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Portfolio</title>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+
+      <!-- Header Content -->
+      <header>
+        <div class="row">
+          <div class="col-md-6">
+            <img class="img-responsive" id="logo-pic" src="images/sfu-block-logo.svg">
+          </div>
+          <div class="col-md-6 text-right text-uppercase" id="name">
+            <h1>Kyle Moss</h1>
+            <h3>Web Developer in Training</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <hr>
+          </div>
+      </header>
+
+      <!-- Cover Image -->
+      <section>
+        <div class="row">
+          <div class="col-md-12">
+            <picture>
+              <source
+                media="(min-width: 500px)"
+                srcset="grunted_imgs/panorama-ridge-800_1x.jpg, grunted_imgs/panorama-ridge-1600_2x.jpg">
+              <source
+                media="(max-width: 499px)"
+                srcset="grunted_imgs/panorama_crop.png">
+  	          <img class="img-responsive" id="cover-pic" src="grunted_imgs/panorama-ridge-800_1x.jpg">
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Content -->
+      <section>
+      <div class="main-row">
+        <div class="col-md-12">
+          <h2 class="featured-work">Featured Work</h2>
+        </div>
+      </div>
+        <div class="row">
+          <div class="col-md-6 text-uppercase">
+            <img class="img-responsive featured-pics" src="images/Marcus.jpg" data-toggle="modal" data-target="#quotegenerator">
+            <h3 class="text-uppercase featured-work">Quote Generator</h3>
+            <p class="featured-work"><a href="https://github.com/klmo8/quotes-project">Github</a></p>
+          </div>
+          <div class="col-md-6 text-uppercase">
+            <img class="img-responsive featured-pics" src="images/algos.png" data-toggle="modal" data-target="#algorithms">
+            <h3 class="text-uppercase featured-work">Algorithms</h3>
+            <p class="featured-work"><a href="http://github.com/">Github</a></p>
+          </div>
+          <div class="col-md-6 text-uppercase">
+            <img class="img-responsive featured-pics" src="images/cv.jpg">
+            <h3 class="text-uppercase featured-work">My Resume</h3>
+            <p class="featured-work"><a href="">Coming Soon</a></p>
+          </div>
+          <div class="col-md-6 text-uppercase">
+            <img class="img-responsive featured-pics" src="images/py.gif">
+            <h3 class="text-uppercase featured-work">Python Contributions</h3>
+            <p class="featured-work"><a href="">Coming Soon</a></p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Modal 1 -->
+    <div class="modal fade" id="quotegenerator" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">About This Project</h4>
+                </div>
+                <div class="modal-body">
+                    <p>A project built with Django. Allows users to find and generate random quotes from famous stoics,
+                    computer scientists, technologists, and mathematicians.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div class="modal fade" id="algorithms" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">About This Project</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Includes source code for various searching, sorting, and other miscellaneous algorithms.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body></html>
