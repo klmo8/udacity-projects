@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 #
 # tournament.py -- implementation of a Swiss-system tournament
-#
+# Author: Kyle Moss
+# Last Modified: June 2017
 
 import psycopg2, bleach
 
@@ -16,7 +17,6 @@ def deleteMatches():
     conn = psycopg2.connect("dbname=tournament")
     c = conn.cursor()
     c.execute("DELETE FROM matches;")
-    #c.execute("UPDATE players SET wins = 0, matches = 0;")
     conn.commit()
     conn.close()
 
@@ -54,12 +54,7 @@ def registerPlayer(name):
     c.execute("INSERT INTO players (name) VALUES (%s);", (bleach.clean(name),))
     conn.commit()
     conn.close()
-    #getting there! select players.id, players.name, count(matches.winner) as wins FROM players join matches on players.id=matches.winner group by players.id
-    #closer... select players.id, players.name, count(matches.winner) as wins, count(matches.winner + matches.loser) as matches FROM players left join matches on players.id=matches.winner group by players.id
-    #closerrrrrr....? select players.id, players.name, count(matches.winner) as wins, (count(*) from matches where matches.winner=players.id or matches.loser=players.id) as matches FROM players left join matches on players.id=matches.winner group by players.id
-    #add smth like this...? select count(*) from matches where winner=3 or loser=1;
-    #combine previous statement for finding wins column with:
-    # select players.id, players.name, count(*) from matches where players.id=matches.winner;
+
 def playerStandings():
     """Returns a list of the players and their win records, sorted by wins.
 
