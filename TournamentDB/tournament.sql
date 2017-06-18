@@ -24,15 +24,15 @@ CREATE TABLE matches (
 
 CREATE VIEW PlayerStandings as
   SELECT * FROM
-    (SELECT players.id, players.name, count(mwon.winner) AS won, count(mwon.matchid) + count(mlost.matchid) AS totalMatches
+    (SELECT players.id, players.name, count(matcheswon.winner) AS won, count(matcheswon.matchid) + count(matcheslost.matchid) AS totalMatches
     FROM players
     LEFT JOIN
-    (SELECT winner, matchid FROM matches) AS mwon
-    ON (players.id = mwon.winner)
+    (SELECT winner, matchid FROM matches) AS matcheswon
+    ON (players.id = matcheswon.winner)
     LEFT JOIN
     (SELECT loser, matchid
-    FROM matches) AS mlost
-    ON (players.id = mlost.loser)
+    FROM matches) AS matcheslost
+    ON (players.id = matcheslost.loser)
     GROUP BY players.id, players.name) AS results
     ORDER BY results.won;
 
