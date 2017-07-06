@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-6 text-center">
+      <h1 class="restaurant-title">{{restaurant.name}}</h1>
+      <p><a href="{{ url_for('newMenuItem', restaurant_id=restaurant.id) }}">Create New Menu Item</a></p>
+
+      {% with messages = get_flashed_messages() %}
+
+      {% if messages %}
+        {% for message in messages %}
+        <ul>
+          <p class="flash">{{ message }}</p>
+        </ul>
+        {% endfor %}
+      {% endif %}
+
+      {% endwith %}
+
+
+
+      {% for i in items %}
+
+      <div class="lead">
+
+      <p><b><u>{{i.name}}</u></b></p>
+
+      <p><b>Description</b>: {{i.description}}</p>
+
+      <p><b>Price</b>: {{i.price}} </p>
+
+      <p><b>Course</b>: {{i.course}} </p>
+
+
+      <p><a href="{{ url_for('editMenuItem', restaurant_id=restaurant.id, menu_id=i.id) }}">Edit</a></p>
+      <p><a href="{{ url_for('deleteMenuItem', restaurant_id=restaurant.id, menu_id=i.id) }}">Delete</a></p>
+
+      </div>
+
+      {% endfor %}
+      <a href="{{ url_for('allRestaurants') }}">Return to List of Restaurants</a>
+    </div>
+    <div class="col-md-3">
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

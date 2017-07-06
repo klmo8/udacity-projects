@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-6 text-center">
+
+        <!-- Title Content -->
+        <h1 class="restaurant-title text-center">Restaurants</h1>
+
+        <!-- Message Flashing -->
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+          <ul>
+            <p class="flash">{{ message }}</p>
+          </ul>
+          {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+
+    <!-- Main Content -->
+        {% for restaurant in restaurants %}
+        <ul>
+            <h2>{{ restaurant.name }}</h2>
+            <a href="{{ url_for('restaurantMenu', restaurant_id=restaurant.id) }}">View Menu</a>
+            <a href="{{ url_for('editRestaurant', restaurant_id=restaurant.id) }}">Edit</a>
+            <a href="{{ url_for('deleteRestaurant', restaurant_id=restaurant.id) }}">Delete</a>
+            <br></br>
+          </ul>
+        {% endfor %}
+      </div>
+    </div>
+</div>
+
+{% endblock content %}

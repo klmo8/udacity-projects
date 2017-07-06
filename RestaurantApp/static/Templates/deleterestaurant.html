@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<div class="container">
+  <div class="row">
+
+    <h1 class="restaurant-title text-center"> Are you sure you want to delete {{restaurant.name}}? </h1>
+    <form action="{{ url_for('deleteRestaurant', restaurant_id=restaurant.id) }}" class=button method='POST'>
+      <div class="row">
+        <div class="text-center">
+          <button type="submit" class="btn btn-default">Delete</button>
+        </div>
+      </div>
+    </form>
+    <p class="text-center">
+      <a href="{{ url_for('allRestaurants') }}">Return to List of Restaurants</a>
+    </p>
+
+{% endblock content %}

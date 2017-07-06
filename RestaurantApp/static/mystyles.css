@@ -1,0 +1,45 @@
+body {
+  background-image: url("grey-background-for-site11.jpg");
+}
+
+.restaurant-title {
+  font-family: 'Bookman', 'Palatino';
+  font-size: 5em;
+}
+
+p {
+  font-size: 20px;
+}
+
+a {
+  font-size: 16px;
+}
+
+.flash {
+  color: red;
+}
+
+
+
+/*.restaurant {
+  display: flex;
+  align-items: left;
+  justify-content: left;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center
+}*/
+
+/*h1, h2, h3, h4, h5, h6 {
+  font-family: 'Garamond', 'Times', sans-serif;
+  font-size: 2em;
+}*/

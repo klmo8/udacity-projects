@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+
+<h1 class="restaurant-title text-center">Add a new restaurant</h1>
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        <form class="form-inline" action="{{ url_for('addRestaurant') }}" method="post">
+          <div class="form-group text-center">
+            <!-- <label for="name">Name:</label> -->
+            <input type='text' class="form-control" name="name" placeholder="Restaurant Name">
+            <div class="input-group">
+              <span class="input-group-btn">
+                <button type="submit" class="btn btn-default">Submit</button>
+              </span>
+            </div>
+
+          </div>
+        </form>
+        <p class="text-center">
+          <a href="{{ url_for('allRestaurants') }}">Return to List of Restaurants</a>
+        </p>
+      </div>
+    </div>
+</div>
+
+{% endblock content %}

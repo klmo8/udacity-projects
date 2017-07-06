@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+
+  <h1 class="restaurant-title text-center">New Menu Item</h1>
+
+  <div class="col-md-4 col-md-offset-4">
+  <form action="{{ url_for('newMenuItem', restaurant_id=restaurant_id) }}" method='post'>
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type='text' class="form-control" name="name">
+    </div>
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <input type='text' class="form-control" name="description">
+    </div>
+    <div class="form-group">
+      <label for="name">Price:</label>
+      <input type='text' class="form-control" name="price">
+    </div>
+    <p>Course: </p>
+    <div class="radio">
+      <div>
+        <label><input type="radio" name="course" value="Appetizer">Appetizer</label>
+      </div>
+      <div>
+        <label><input type="radio" name="course" value="Main"> Main</label>
+      </div>
+      <div>
+        <label><input type="radio" name="course" value="Dessert"> Dessert</label>
+      </div>
+      <input type='submit', value='Create'>
+    </div>
+  </form>
+
+  <a href="{{ url_for('allRestaurants') }}">Return to List of Restaurants</a>
+
+{% endblock content %}
